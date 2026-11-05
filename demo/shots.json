@@ -1,0 +1,80 @@
+[
+  {
+    "name": "overview",
+    "steps": [
+      {
+        "waitFor": "[data-testid=version-table]"
+      },
+      {
+        "wait": 200
+      }
+    ],
+    "width": 1440
+  },
+  {
+    "name": "expiring-soon",
+    "steps": [
+      {
+        "waitFor": "[data-testid=version-table]"
+      },
+      {
+        "click": "role=button[name=/Expiring Soon/]"
+      },
+      {
+        "wait": 300
+      }
+    ],
+    "width": 1440,
+    "selector": "[role=tabpanel][aria-label=Projects]"
+  },
+  {
+    "name": "details",
+    "steps": [
+      {
+        "waitFor": "[data-testid=version-table]"
+      },
+      {
+        "fill": "input[type=search]",
+        "value": "billing"
+      },
+      {
+        "wait": 500
+      },
+      {
+        "click": "tr.pvd-data-row:has(td:text-is('Billing.Api'))"
+      },
+      {
+        "wait": 200
+      }
+    ],
+    "selector": ".ax-card:has([data-testid=version-table])"
+  },
+  {
+    "name": "lifecycle",
+    "steps": [
+      {
+        "waitFor": "[data-testid=version-table]"
+      },
+      {
+        "click": "role=tab[name=/Lifecycle Reference/]"
+      },
+      {
+        "wait": 300
+      }
+    ]
+  },
+  {
+    "name": "configuration",
+    "steps": [
+      {
+        "waitFor": "[data-testid=version-table]"
+      },
+      {
+        "click": "role=tab[name=/Configuration/]"
+      },
+      {
+        "wait": 300
+      }
+    ]
+  }
+]

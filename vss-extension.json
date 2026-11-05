@@ -1,0 +1,112 @@
+{
+  "manifestVersion": 1,
+  "id": "project-version-detector",
+  "version": "1.0.0",
+  "name": "Project Version Detector",
+  "description": "Scans repositories to detect .NET versions, framework types, Azure Functions models, Container App environments, NuGet targets, and highlights outdated frameworks with LTS lifecycle tracking.",
+  "publisher": "adam-wheater",
+  "categories": [
+    "Azure Repos"
+  ],
+  "tags": [
+    "dotnet",
+    "version",
+    "framework",
+    "lifecycle",
+    "nuget",
+    "azure-functions",
+    "container-apps",
+    "maui",
+    "xamarin",
+    "lts",
+    "end-of-life",
+    "upgrade"
+  ],
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "icons": {
+    "default": "static/icon.png"
+  },
+  "screenshots": [
+    { "path": "static/screenshots/overview.png" },
+    { "path": "static/screenshots/expiring-soon.png" },
+    { "path": "static/screenshots/details.png" },
+    { "path": "static/screenshots/lifecycle.png" },
+    { "path": "static/screenshots/configuration.png" }
+  ],
+  "content": {
+    "details": {
+      "path": "overview.md"
+    },
+    "license": {
+      "path": "LICENSE"
+    }
+  },
+  "links": {
+    "repository": {
+      "uri": "https://github.com/adam-wheater/azure-devops-project-version-detector"
+    },
+    "issues": {
+      "uri": "https://github.com/adam-wheater/azure-devops-project-version-detector/issues"
+    },
+    "support": {
+      "uri": "https://github.com/adam-wheater/azure-devops-project-version-detector/issues"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/adam-wheater/azure-devops-project-version-detector"
+  },
+  "branding": {
+    "color": "#0078d4",
+    "theme": "dark"
+  },
+  "galleryFlags": [
+    "Preview"
+  ],
+  "contributions": [
+    {
+      "id": "version-hub",
+      "type": "ms.vss-web.hub",
+      "description": "Project Version Detector hub under Repos",
+      "targets": [
+        "ms.vss-code-web.code-hub-group"
+      ],
+      "properties": {
+        "name": "Version Detector",
+        "order": 99,
+        "uri": "dist/VersionHub/VersionHub.html",
+        "icon": {
+          "light": "static/icon.png",
+          "dark": "static/icon.png"
+        }
+      }
+    }
+  ],
+  "scopes": [
+    "vso.code",
+    "vso.extension.data"
+  ],
+  "demands": [],
+  "files": [
+    {
+      "path": "dist",
+      "addressable": true
+    },
+    {
+      "path": "static",
+      "addressable": true
+    },
+    {
+      "path": "overview.md",
+      "addressable": true
+    },
+    {
+      "path": "LICENSE",
+      "addressable": true
+    }
+  ]
+}

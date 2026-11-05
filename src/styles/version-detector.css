@@ -1,0 +1,155 @@
+/*
+ * Project Version Detector: the few rules the shared design system does not
+ * cover. Colours come only from the --ax-* tokens in app.css, so both themes
+ * and high contrast keep working without changes here.
+ */
+
+/* Summary tiles that filter the table. The tile is the button, so it keeps the
+   .ax-metric look and gains a pressed state that is not colour alone (a ring
+   plus the "Filtering" hint text). */
+.pvd-metric-button {
+  font: inherit;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  color: inherit;
+}
+
+.pvd-metric-button .ax-metric__value,
+.pvd-metric-button .ax-metric__hint {
+  display: block;
+}
+
+.pvd-metric-button[aria-pressed="true"] {
+  border-color: var(--ax-accent);
+  box-shadow: 0 0 0 2px var(--ax-accent-ring);
+}
+
+/* Project table: scrolls inside the card so the sticky header stays visible. */
+.pvd-table-scroll {
+  max-height: calc(100vh - 320px);
+  overflow: auto;
+}
+
+.pvd-data-row {
+  cursor: pointer;
+}
+
+.pvd-col-toggle {
+  width: 40px;
+}
+
+/* Sortable headers carry a real button so they work from the keyboard. */
+.pvd-sort-button {
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.pvd-chevron {
+  display: inline-flex;
+  transition: transform var(--ax-fast) var(--ax-ease);
+}
+
+.pvd-chevron--open {
+  transform: rotate(90deg);
+}
+
+.ax-table td.pvd-date-past {
+  color: var(--ax-danger);
+  font-weight: 650;
+}
+
+.pvd-likely {
+  color: var(--ax-text-3);
+  font-style: italic;
+}
+
+/* Expanded project details. */
+.ax-table .pvd-detail-row td {
+  background: var(--ax-surface-2);
+  padding: var(--ax-s3) var(--ax-s4);
+}
+
+.pvd-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--ax-s3);
+  overflow-wrap: anywhere;
+}
+
+.pvd-detail-title {
+  margin: 0 0 6px;
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ax-text-3);
+}
+
+.pvd-detail-title + .pvd-detail-title,
+.pvd-detail-section p + .pvd-detail-title {
+  margin-top: var(--ax-s3);
+}
+
+.pvd-detail-section p {
+  margin: 2px 0;
+  font-size: 13px;
+}
+
+.pvd-list {
+  margin: 4px 0;
+  padding-left: 18px;
+  font-size: 12px;
+  color: var(--ax-text-3);
+}
+
+.pvd-list--plain {
+  list-style: none;
+  padding-left: 0;
+  color: var(--ax-text);
+}
+
+.pvd-list li {
+  padding: 1px 0;
+}
+
+/* Inline action that reads as a link inside banner text. */
+.pvd-inline-link {
+  font: inherit;
+  color: var(--ax-accent);
+  background: none;
+  border: none;
+  padding: 0;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.pvd-actions {
+  white-space: nowrap;
+}
+
+.pvd-actions .ax-btn + .ax-btn {
+  margin-left: var(--ax-s1);
+}
+
+.pvd-edit-input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.pvd-count {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--ax-text-3);
+}
+
+/* .ax-table td sets the cell colour, which outranks .ax-muted on the cell. */
+.ax-table td.ax-muted {
+  color: var(--ax-text-3);
+}
